@@ -11,16 +11,16 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "mi_bucket" {
+resource "aws_s3_bucket" "mi_bucket_01" {
   bucket = "fabricio-bucket-terraform-2026-demo-01"
 }
 
-resource "aws_s3_bucket" "mi_bucket" {
+resource "aws_s3_bucket" "mi_bucket_05" {
   bucket = "fabricio-bucket-terraform-2026-demo-05"
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = aws_s3_bucket.mi_bucket.id
+  bucket = aws_s3_bucket.mi_bucket_01.id
 
   versioning_configuration {
     status = "Enabled"
